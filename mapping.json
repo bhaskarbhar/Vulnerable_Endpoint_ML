@@ -1,0 +1,8 @@
+{
+  "url_col": "request_url",
+  "method_col": "http_method",
+  "params_col": "query",
+  "headers_col": "request_headers",
+  "label_col": "is_attack"
+}
+

