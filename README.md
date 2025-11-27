@@ -287,30 +287,5 @@ Edit `src/train.py` to adjust:
 - **shap**: Model interpretability (optional)
 - **tqdm**: Progress bars
 
-## 🤝 Contributing
 
-Contributions are welcome! Areas for improvement:
-- Better feature engineering
-- Handling class imbalance
-- Model interpretability
-- Additional datasets
-- Performance optimization
-
-## 📄 License
-
-[Add your license here]
-
-## 🙏 Acknowledgments
-
-- Datasets from Kaggle and HuggingFace
-- LightGBM team for the excellent gradient boosting library
-- Cybersecurity community for open datasets
-
-## 📧 Contact
-
-[Add contact information if desired]
-
----
-
-**Note**: This is a research/educational project. Always validate predictions with proper security testing before making decisions based on model outputs.
 
